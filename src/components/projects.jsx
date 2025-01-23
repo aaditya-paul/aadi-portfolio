@@ -82,8 +82,8 @@ function Projects() {
                     <div
                       className={`  absolute w-6 h-6 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full border-4 border-gray-900 left-1/2 transform -translate-x-1/2 ${
                         index % 2 === 0
-                          ? "md:-translate-y-[120px] "
-                          : "md:-translate-y-[120px] "
+                          ? "md:-translate-y-[135px] "
+                          : "md:-translate-y-[135px] "
                       }`}
                     ></div>
 
