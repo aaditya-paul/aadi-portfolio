@@ -36,7 +36,7 @@ function Contact() {
     <div className="relative h-full w-full bg-black">
       <div className="absolute bottom-0 md:left-[-20%] -left-[50%] right-0 top-[-10%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,164,0,.15),rgba(255,255,255,0))]"></div>
       <div className="absolute bottom-0 md:right-[-20%] -right-[50%] md:top-[-10%] top-[70%] h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle_farthest-side,rgba(255,164,0,.15),rgba(255,255,255,0))]"></div>
-      <div className=" flex flex-col h-screen w-screen text-white">
+      <div className=" flex flex-col h-screen w-screen text-white mb-24">
         <div
           className=" text-3xl md:text-[48px] font-poppins text-center md:text-right md:mx-64 md:my-24 mx-5 my-12 "
           style={{
@@ -48,7 +48,7 @@ function Contact() {
         <div className="md:justify-center md:items-center flex flex-col md:flex-row gap-5 md:gap-12 h-full">
           {contact.map((contact, index) => (
             <a key={index} href={contact.url} target="_blank">
-              <div className=" hover:border-orange-400 transition-all ease-in rounded-2xl md:-mt-36 md:px-12 px-5 py-5 mx-5 md:py-4 border-white border">
+              <div className=" hover:border-orange-400 transition-all ease-in rounded-2xl md:-mt-36 md:px-12 px-5 py-5 mx-5 md:py-4 border-white border flex flex-col items-center">
                 <img
                   src={contact.icon}
                   className="w-[50px] h-[50px] border-white"
