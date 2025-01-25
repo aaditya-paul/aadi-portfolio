@@ -53,7 +53,7 @@ function Projects() {
 
       <div className="  min-h-screen min-w-screen flex flex-col gap-12 items-center py-24  text-white ">
         <div
-          className=" font-poppins text-2xl md:text-[48px] underline underline-offset-8 z-20"
+          className=" font-poppins text-2xl md:text-5xl lg:text-[48px] underline underline-offset-8 z-20"
           style={{
             textShadow: "oklch(0.75 0.183 55.934) 0.15vw 0.15vw",
           }}
@@ -80,23 +80,19 @@ function Projects() {
                   >
                     {/* Connector Dots */}
                     <div
-                      className={`  absolute w-6 h-6 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full border-4 border-gray-900 left-1/2 transform -translate-x-1/2 ${
-                        index % 2 === 0
-                          ? "md:-translate-y-[135px] "
-                          : "md:-translate-y-[135px] "
-                      }`}
+                      className={`absolute w-6 h-6 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full border-4 border-gray-900 left-1/2 transform -translate-x-1/2 -translate-y-1/2 -top-[25px] `}
                     ></div>
 
                     {/* Content */}
                     <div
-                      className={`bg-black z-20  p-6 rounded-lg shadow-[0px_0px_15px_5px_rgba(255,255,255,0.1)] max-w-md ${
+                      className={`bg-black z-20 p-6 rounded-lg shadow-[0px_0px_15px_5px_rgba(255,255,255,0.1)] max-w-md ${
                         index % 2 === 0 ? "ml-6" : "mr-6"
                       }`}
                     >
-                      <h2 className="text-xl font-bold text-orange-400">
+                      <h2 className="text-xl md:text-2xl font-bold text-orange-400">
                         {achievement.title}
                       </h2>
-                      <p className="text-gray-300 mt-2">
+                      <p className="text-lg md:text-lg lg:text-md text-gray-300 mt-2">
                         {achievement.description}
                       </p>
                       <code className="text-sm text-gray-500 mt-4 block">

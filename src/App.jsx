@@ -1,6 +1,7 @@
 import About from "./components/about";
 import Contact from "./components/contact";
 import Dots from "./components/dots";
+import Footer from "./components/footer";
 import HeroSection from "./components/HeroSection";
 import Projects from "./components/projects";
 
@@ -11,6 +12,7 @@ function App() {
       <About />
       <Projects />
       <Contact />
+      {/* <Footer /> */}
       <Dots />
     </div>
   );

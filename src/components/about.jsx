@@ -2,7 +2,7 @@ import React from "react";
 
 function About() {
   return (
-    <div className=" min-w-screen min-h-fit md:min-h-screen text-white flex flex-col md:gap-12 gap-5  py-24 px-5 md:px-48 md:py-16">
+    <div className=" min-w-screen min-h-fit md:min-h-screen text-white flex flex-col md:gap-12 gap-5  py-24 px-5 md:px-12 lg:px-48 md:py-16">
       <div
         className=" text-3xl  md:text-[48px] font-poppins font-medium underline underline-offset-8"
         style={{
@@ -11,7 +11,7 @@ function About() {
       >
         ABOUT
       </div>
-      <div className=" text-lg font-fira-code leading-8 md:leading-10 line-clamp-[12] md:text-justify md:line-clamp-none">
+      <div className=" text-lg font-fira-code leading-8 md:leading-10 line-clamp-[12] md:line-clamp-[15] md:text-justify lg:line-clamp-none">
         Hi, I&apos;m{" "}
         <span
           style={{

@@ -3,7 +3,7 @@ import Me from "../assets/mee.png";
 function HeroSection() {
   return (
     <div className=" flex flex-col items-center justify-center h-screen w-screen bg-black">
-      <div className="w-full h-full text-white flex flex-col md:flex-row justify-center items-center">
+      <div className="w-full h-full text-white flex flex-col lg:flex-row justify-center items-center">
         <div className="  z-20 h-fit w-fit rounded-full ring-4 ring-orange-400 ">
           <img
             className=" md:w-[350px] md:h-[350px] w-[150px] h-[150px] rounded-full object-cover"
