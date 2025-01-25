@@ -1,5 +1,11 @@
 import React from "react";
 import {motion} from "motion/react";
+import SU from "../../public/preview/shiksha.jpg";
+import CB from "../../public/preview/clever.jpg";
+import WTT from "../../public/preview/wtt.jpg";
+import MB from "../../public/preview/mb.jpg";
+import UPX from "../../public/preview/upx.jpg";
+import CG from "../../public/preview/cg.jpg";
 function Projects() {
   const achievements = [
     {
@@ -8,6 +14,7 @@ function Projects() {
         "Delivered a responsive landing page with server-side rendering, optimizing performance for improved SEO and user engagement.",
       date: "Jun 2023",
       url: "https://github.com/aaditya-paul/shikhsha-ui",
+      img: SU,
     },
     {
       title: "Clever Books",
@@ -15,6 +22,7 @@ function Projects() {
         "Crafted a modern one-page UI mockup using Next.js and Tailwind CSS, receiving positive feedback for its design aesthetics and usability.",
       date: "Jun 2024",
       url: "https://github.com/aaditya-paul/clever-books",
+      img: CB,
     },
     {
       title: "Task Tracker",
@@ -22,6 +30,7 @@ function Projects() {
         "Designed a cutting-edge workflow management tool that integrates GitHub, providing admins seamless access to code repositories and task assignments.",
       date: "Sep 2024",
       url: "https://github.com/aaditya-paul/WTT",
+      img: WTT,
     },
 
     {
@@ -30,6 +39,7 @@ function Projects() {
         "Created a detailed UI prototype for an online food delivery platform, focusing on responsive and visually appealing design.",
       date: "Apr 2023",
       url: "https://github.com/aaditya-paul/meal-buddy",
+      img: MB,
     },
     {
       title: "Upexperiment",
@@ -37,6 +47,7 @@ function Projects() {
         "Built a user-friendly blogging platform with seamless device adaptability, ensuring an optimal viewing experience across all screens.",
       date: "Mar 2023",
       url: "https://github.com/aaditya-paul/upexperiment",
+      img: UPX,
     },
     {
       title: "Cogni Glove",
@@ -44,6 +55,7 @@ function Projects() {
         "Developed a gesture-recognition hand glove using AI and WebSockets, capable of interpreting sign language and performing tasks based on recognized gestures.",
       date: "May 2024",
       url: "https://github.com/aaditya-paul/cogni-glove",
+      img: CG,
     },
   ];
 
@@ -53,7 +65,7 @@ function Projects() {
 
       <div className="  min-h-screen min-w-screen flex flex-col gap-12 items-center py-24  text-white ">
         <motion.div
-          className=" font-poppins text-2xl md:text-5xl lg:text-[48px] underline underline-offset-8 z-20"
+          className=" font-poppins text-2xl md:text-5xl lg:text-[48px] z-20"
           initial={false}
           whileInView={{
             // opacity: 1,
@@ -65,6 +77,8 @@ function Projects() {
             textShadow: "oklch(0.75 0.183 55.934) 0.15vw 0.15vw",
             display: "inline-block", // Ensure element respects the clipping path animation
             // opacity: 0, // Start with the text hidden
+            textDecoration: "underline",
+            textUnderlineOffset: "4px",
             clipPath: "inset(0 100% 0 0)", // Initially hide the text (clip from right side)
           }}
         >
@@ -82,7 +96,9 @@ function Projects() {
               {/* Timeline Items */}
               <div className="space-y-12">
                 {achievements.map((achievement, index) => (
-                  <motion.div
+                  <motion.a
+                    href={achievement.url}
+                    target="_blank"
                     key={index}
                     className={`relative flex items-center ${
                       index % 2 === 0 ? "justify-start" : "justify-end"
@@ -108,26 +124,37 @@ function Projects() {
 
                     {/* Content */}
                     <div
-                      className={`bg-black z-20 p-6 rounded-lg shadow-[0px_0px_15px_5px_rgba(255,255,255,0.1)] max-w-md ${
+                      className={`bg-black z-20 p-6 rounded-lg shadow-[0px_0px_15px_5px_rgba(255,255,255,0.1)] md:max-w-md lg:max-w-lg ${
                         index % 2 === 0 ? "ml-6" : "mr-6"
                       }`}
                     >
-                      <h2 className="text-xl md:text-2xl font-bold text-orange-400">
-                        {achievement.title}
-                      </h2>
-                      <p className="text-lg md:text-lg lg:text-md text-gray-300 mt-2">
-                        {achievement.description}
-                      </p>
-                      <code className="text-sm text-gray-500 mt-4 block">
-                        <a href={achievement.url} target="_blank">
-                          {achievement.url}
-                        </a>
-                      </code>
-                      <span className="text-sm text-gray-500 mt-4 block">
-                        {achievement.date}
-                      </span>
+                      <div className="">
+                        <div>
+                          <h2 className="text-xl md:text-2xl font-bold text-orange-400">
+                            {achievement.title}
+                          </h2>
+                          <p className="text-lg md:text-lg lg:text-md text-gray-300 mt-2">
+                            {achievement.description}
+                          </p>
+                          <code className="text-sm text-gray-500 mt-4 block">
+                            <a href={achievement.url} target="_blank">
+                              {achievement.url}
+                            </a>
+                          </code>
+                          <span className="text-sm text-gray-500 mt-4 block">
+                            {achievement.date}
+                          </span>
+                        </div>
+                        <div className="h-full w-full flex justify-center items-center mt-5">
+                          <img
+                            src={achievement.img}
+                            alt="Project"
+                            className=" h-full w-full object-cover "
+                          />
+                        </div>
+                      </div>
                     </div>
-                  </motion.div>
+                  </motion.a>
                 ))}
               </div>
             </div>

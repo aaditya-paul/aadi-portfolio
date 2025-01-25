@@ -64,7 +64,7 @@ function Contact() {
               whileInView={{scale: 1, opacity: 1}}
               viewport={{once: true}}
               transition={{
-                delay: 0.2 * index,
+                delay: 0.1 * index,
                 type: "spring",
                 stiffness: 200,
                 damping: 20,

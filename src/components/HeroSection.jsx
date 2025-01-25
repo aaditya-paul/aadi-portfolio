@@ -28,7 +28,7 @@ function HeroSection() {
               style={{
                 textShadow: "oklch(0.75 0.183 55.934) 0.15vw 0.15vw",
               }}
-              className=" animated-text pr-5 md:text-[64px] text-[32px] font-playwrite font-medium  "
+              className=" animated-text pr-5 md:text-[64px] text-[30px] font-playwrite font-medium  "
             >
               Hello There!{" "}
             </div>{" "}
