@@ -1,17 +1,41 @@
 import React from "react";
-
+import "../styles/textDrawing.css";
+import {motion} from "motion/react";
 function About() {
   return (
     <div className=" min-w-screen min-h-fit md:min-h-screen text-white flex flex-col md:gap-12 gap-5  py-24 px-5 md:px-12 lg:px-48 md:py-16">
-      <div
-        className=" text-3xl  md:text-[48px] font-poppins font-medium underline underline-offset-8"
+      <motion.div
+        // initial={{opacity: 0}}
+        initial={false}
+        whileInView={{
+          // opacity: 1,
+          clipPath: "inset(0 0 0 0)", // To reveal the text gradually from left to right
+          transition: {duration: 1.5, ease: "easeInOut"},
+        }}
+        viewport={{once: true}}
         style={{
           textShadow: "oklch(0.75 0.183 55.934) 0.15vw 0.15vw",
+          display: "inline-block", // Ensure element respects the clipping path animation
+          // opacity: 0, // Start with the text hidden
+          clipPath: "inset(0 100% 0 0)", // Initially hide the text (clip from right side)
         }}
+        className=" text-3xl  md:text-[48px] font-poppins font-medium underline underline-offset-8"
       >
         ABOUT
-      </div>
-      <div className=" text-lg font-fira-code leading-8 md:leading-10 line-clamp-[12] md:line-clamp-[15] md:text-justify lg:line-clamp-none">
+      </motion.div>
+      <motion.div
+        initial={{scale: 0}}
+        whileInView={{scale: 1}}
+        viewport={{once: true}}
+        transition={{
+          duration: 1.5,
+          ease: "easeInOut",
+          type: "spring",
+          stiffness: 200,
+          damping: 20,
+        }}
+        className=" text-lg font-fira-code leading-8 md:leading-10 line-clamp-[12] md:line-clamp-[15] md:text-justify lg:line-clamp-none"
+      >
         Hi, I&apos;m{" "}
         <span
           style={{
@@ -162,7 +186,7 @@ function About() {
           {" "}
           geek out about tech!
         </span>
-      </div>
+      </motion.div>
     </div>
   );
 }

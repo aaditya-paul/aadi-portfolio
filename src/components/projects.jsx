@@ -1,5 +1,5 @@
 import React from "react";
-
+import {motion} from "motion/react";
 function Projects() {
   const achievements = [
     {
@@ -52,14 +52,24 @@ function Projects() {
       <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
 
       <div className="  min-h-screen min-w-screen flex flex-col gap-12 items-center py-24  text-white ">
-        <div
+        <motion.div
           className=" font-poppins text-2xl md:text-5xl lg:text-[48px] underline underline-offset-8 z-20"
+          initial={false}
+          whileInView={{
+            // opacity: 1,
+            clipPath: "inset(0 0 0 0)", // To reveal the text gradually from left to right
+            transition: {duration: 1.5, ease: "easeInOut"},
+          }}
+          viewport={{once: true}}
           style={{
             textShadow: "oklch(0.75 0.183 55.934) 0.15vw 0.15vw",
+            display: "inline-block", // Ensure element respects the clipping path animation
+            // opacity: 0, // Start with the text hidden
+            clipPath: "inset(0 100% 0 0)", // Initially hide the text (clip from right side)
           }}
         >
           Showcase Of Excellence
-        </div>
+        </motion.div>
         <div>
           <div className="bg-transparent text-white min-h-screen py-5 md:py-10 px-6">
             {/* <h1 className="text-4xl font-bold text-center text-white mb-8">
@@ -72,11 +82,24 @@ function Projects() {
               {/* Timeline Items */}
               <div className="space-y-12">
                 {achievements.map((achievement, index) => (
-                  <div
+                  <motion.div
                     key={index}
                     className={`relative flex items-center ${
                       index % 2 === 0 ? "justify-start" : "justify-end"
                     }`}
+                    initial={{
+                      translateX: index % 2 === 0 ? -100 : 100,
+                      opacity: 0,
+                      scale: 0,
+                    }}
+                    whileInView={{translateX: 0, opacity: 1, scale: 1}}
+                    viewport={{once: true}}
+                    transition={{
+                      delay: 0.2,
+                      type: "spring",
+                      stiffness: 200,
+                      damping: 20,
+                    }}
                   >
                     {/* Connector Dots */}
                     <div
@@ -104,7 +127,7 @@ function Projects() {
                         {achievement.date}
                       </span>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
